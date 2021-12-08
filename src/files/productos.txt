@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Jordan 1 haig rojas-blancas",
+    "precio": "800",
+    "thumbnail": "http://localhost:8080/imagenes/jordan1-rojas-negras-blancas.jpg",
+    "id": 1
+  },
+  {
+    "name": "Jordan 1 haig azules",
+    "precio": "700",
+    "thumbnail": "http://localhost:8080/imagenes/jordan1-azules-blancas.jpg",
+    "id": 3
+  },
+  {
+    "name": "Jordan 1 haig rojas-negras",
+    "precio": "700",
+    "thumbnail": "http://localhost:8080/imagenes/jordan1-rojas-negras.jpg",
+    "id": 4
+  },
+  {
+    "name": "Jordan 1 low azules-negras",
+    "precio": "650",
+    "thumbnail": "http://localhost:8080/imagenes/jordan1-low-clestes-negras.webp",
+    "id": 5
+  },
+  {
+    "name": "Remera Chicago Bulls Retro 23",
+    "precio": "435",
+    "thumbnail": "http://localhost:8080/imagenes/remera-nba-jordan-retro-roja.jpg",
+    "id": 6
+  },
+]
