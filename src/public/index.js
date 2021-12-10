@@ -1,5 +1,5 @@
 const socket = io();
-//---------------------------EVENTOS DE SOCKET --------------------------------------
+
 socket.on('deliverProds',data=>{
     let pets = data.payload;
     fetch('templates/productosTable.handlebars').then(string=>string.text()).then(template=>{
@@ -15,7 +15,6 @@ socket.on('deliverProds',data=>{
 
 
 
-//-----------------------------FIN DE SOCKET ----------------------------------------------
 document.addEventListener('submit',enviarFormulario);
 
 function enviarFormulario(event){
@@ -34,7 +33,7 @@ function enviarFormulario(event){
             icon:'success',
             timer:2000,
         }).then(result=>{
-            //location.href='/'
+            location.href='/'
         })
     })
 }

@@ -2,10 +2,13 @@ import express from 'express';
 import {engine} from 'express-handlebars';
 import cors from 'cors';
 import Contenedor from './classes/Contenedor.js';
-import prodRouter from './routes/productos.js';
+import router from './routes/productos.js';
 import upload from './services/uploader.js';
 import __dirname from './utils.js';
 import {Server} from 'socket.io';
+import carrito from './routes/carritos.js';
+
+export const io = new Server(server);
 
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -14,7 +17,6 @@ const contenedor = new Contenedor();
 const server = app.listen(PORT,()=>{
     console.log("Listening on port: ",PORT)
 })
-export const io = new Server(server);
 
 app.engine('handlebars',engine())
 app.set('views',__dirname+'/views')
@@ -29,7 +31,8 @@ app.use((req,res,next)=>{
     next();
 })
 app.use(express.static(__dirname+'/public'));
-app.use('/api/productos',prodRouter);
+app.use('/api/productos', router);
+app.use('api/carrito', carrito);
 
 app.post('/api/uploadfile',upload.fields([
     {

@@ -22,7 +22,7 @@ router.get('/:pid',(req,res)=>{
 router.post('/',upload.single('image'),(req,res)=>{
     let file = req.file;
     let prod = req.body;
-    pet.thumbnail = req.protocol+"://"+req.hostname+":8080"+'/imagenes/'+file.filename;
+    prod.thumbnail = req.protocol+"://"+req.hostname+":8080"+'/imagenes/'+file.filename;
     contenedor.saveObject(prod).then(result=>{
         res.send(result);
         if(result.status==="success"){
