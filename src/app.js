@@ -8,8 +8,6 @@ import __dirname from './utils.js';
 import {Server} from 'socket.io';
 import carrito from './routes/carritos.js';
 
-export const io = new Server(server);
-
 const app = express();
 const PORT = process.env.PORT || 8080;
 const contenedor = new Contenedor();
@@ -17,6 +15,8 @@ const contenedor = new Contenedor();
 const server = app.listen(PORT,()=>{
     console.log("Listening on port: ",PORT)
 })
+
+export const io = new Server(server);
 
 app.engine('handlebars',engine())
 app.set('views',__dirname+'/views')
